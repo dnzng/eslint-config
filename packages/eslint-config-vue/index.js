@@ -16,6 +16,9 @@ module.exports = {
   overrides: [
     {
       files: ['*.vue'],
+      // the eslint-plugin-vue plugin already contains 
+      // vue-eslint-parser and @typescript-eslint/parser.
+      // so, do not install them in this project.
       parser: 'vue-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser'
