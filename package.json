@@ -10,7 +10,7 @@
   "author": "Dylan Zhang",
   "license": "MIT",
   "scripts": {
-    "release": "bumpp && pnpm -r publish"
+    "release": "bumpp -r && pnpm -r publish"
   },
   "devDependencies": {
     "bumpp": "^9.1.1",
