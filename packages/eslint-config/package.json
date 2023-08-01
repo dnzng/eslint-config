@@ -1,0 +1,23 @@
+{
+  "name": "@dnzng/eslint-config",
+  "version": "0.0.1",
+  "author": "Dylan Zhang",
+  "license": "MIT",
+  "homepage": "https://github.com/dnzng/eslint-config",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint -c index.js ."
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@dnzng/eslint-config-vue": "workspace:*"
+  }
+}

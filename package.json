@@ -1,0 +1,19 @@
+{
+  "name": "@dnzng/eslint-config-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "packageManager": "pnpm@8.6.5",
+  "engines": {
+    "node": ">=16"
+  },
+  "author": "Dylan Zhang",
+  "license": "MIT",
+  "scripts": {
+    "release": "bumpp && pnpm -r publish"
+  },
+  "devDependencies": {
+    "bumpp": "^9.1.1",
+    "eslint": "^8.45.0"
+  }
+}
