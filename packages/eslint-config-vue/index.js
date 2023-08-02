@@ -10,7 +10,7 @@ if (!TS)
 module.exports = {
   extends: [
     'plugin:vue/vue3-recommended',
-    TS ? '@dnzng/eslint-config-ts' : '@dnzng/eslint-config-standard',
+    TS ? '@dnzng/eslint-config-ts' : '@dnzng/eslint-config-general',
   ],
 
   overrides: [
