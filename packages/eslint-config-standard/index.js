@@ -1,12 +1,4 @@
 module.exports = {
-  parserOptions: {
-    ecmaVersion: '2021',
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-
   // does not include `browser; true` except the global window、document and navigator
   // as this repo mainly aim at both ES and NodeJS.
   env: {
@@ -20,11 +12,36 @@ module.exports = {
     navigator: 'readonly'
   },
 
+  parserOptions: {
+    ecmaVersion: '2021',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+
   plugins: [
     'import',
     'n',
     'promise'
   ],
+
+  settings: {
+    // specify an or more resolvers to resolve whether the imported module/file exsits or not.
+    // if there is more than one resolver, the `eslint-plugin-import` plugin will try to 
+    // resolve the module/file in the order you configured
+    'import/resolver': {
+      // use nodejs's algorithm to reslove a module/file.
+      // the key `node` is shortcut of the `eslint-import-resolver-node` plugin
+      node: {
+        // if the imported file is not a file, this plugin will try to 
+        // add each of the following extensions to the end of this file.
+        // if there does not exist, eslint will report the following error:
+        // error  Unable to resolve path to module './foo'   import/no-unresolved
+        extensions: ['.js', '.mjs']
+      }
+    }
+  },
 
   rules: {
     'no-var': 'warn',
@@ -226,9 +243,9 @@ module.exports = {
     'yield-star-spacing': ['error', 'both'],
     'yoda': ['error', 'never'],
 
+    'import/no-unresolved': 'error',
     'import/export': 'error',
     'import/first': 'error',
-    'import/no-absolute-path': ['error', { esmodule: true, commonjs: true, amd: false }],
     'import/no-named-default': 'error',
     'import/no-webpack-loader-syntax': 'error',
 

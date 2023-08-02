@@ -1,0 +1,27 @@
+{
+  "name": "@dnzng/eslint-config-general",
+  "version": "0.0.1-alpha.3",
+  "author": "Dylan Zhang",
+  "license": "MIT",
+  "homepage": "https://github.com/dnzng/eslint-config",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint -c index.js ."
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@dnzng/eslint-config-standard": "workspace:*",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-yml": "^1.8.0"
+  }
+}
