@@ -1,6 +1,6 @@
 {
   "name": "@dnzng/eslint-config-basic",
-  "version": "0.0.1-alpha.3",
+  "version": "0.1.0",
   "author": "Dylan Zhang",
   "license": "MIT",
   "homepage": "https://github.com/dnzng/eslint-config",
