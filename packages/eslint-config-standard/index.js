@@ -20,13 +20,6 @@ module.exports = {
     navigator: 'readonly'
   },
 
-  settings: {
-    'import/resolver': {
-      // use node's import to resolve a module with .js and .mjs extensions
-      node: { extensions: ['.js', '.mjs'] },
-    },
-  },
-
   plugins: [
     'import',
     'n',
