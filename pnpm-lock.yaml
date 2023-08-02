@@ -62,9 +62,9 @@ importers:
 
   packages/eslint-config-ts:
     dependencies:
-      '@dnzng/eslint-config-standard':
+      '@dnzng/eslint-config-general':
         specifier: workspace:*
-        version: link:../eslint-config-standard
+        version: link:../eslint-config-general
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.2.1
         version: 6.2.1(@typescript-eslint/parser@6.2.1)(eslint@8.45.0)(typescript@5.1.6)
@@ -74,9 +74,6 @@ importers:
       eslint:
         specifier: '>=7.4.0'
         version: 8.45.0
-      eslint-plugin-import:
-        specifier: ^2.28.0
-        version: 2.28.0(@typescript-eslint/parser@6.2.1)(eslint@8.45.0)
     devDependencies:
       typescript:
         specifier: '>=3.9'

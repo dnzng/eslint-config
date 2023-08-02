@@ -1,7 +1,8 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    '@dnzng/eslint-config-standard',
+    // `@dnzng/general` already contains `plugin:import`
+    '@dnzng/general',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ],
