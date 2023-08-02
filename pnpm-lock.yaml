@@ -24,7 +24,7 @@ importers:
         specifier: '>=7.4.0'
         version: 8.45.0
 
-  packages/eslint-config-general:
+  packages/eslint-config-basic:
     dependencies:
       '@dnzng/eslint-config-standard':
         specifier: workspace:*
@@ -62,9 +62,9 @@ importers:
 
   packages/eslint-config-ts:
     dependencies:
-      '@dnzng/eslint-config-general':
+      '@dnzng/eslint-config-basic':
         specifier: workspace:*
-        version: link:../eslint-config-general
+        version: link:../eslint-config-basic
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.2.1
         version: 6.2.1(@typescript-eslint/parser@6.2.1)(eslint@8.45.0)(typescript@5.1.6)
@@ -81,9 +81,9 @@ importers:
 
   packages/eslint-config-vue:
     dependencies:
-      '@dnzng/eslint-config-general':
+      '@dnzng/eslint-config-basic':
         specifier: workspace:*
-        version: link:../eslint-config-general
+        version: link:../eslint-config-basic
       '@dnzng/eslint-config-ts':
         specifier: workspace:*
         version: link:../eslint-config-ts
