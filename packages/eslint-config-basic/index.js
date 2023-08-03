@@ -23,10 +23,44 @@ module.exports = {
     'plugin:markdown/recommended',
   ],
 
+  ignorePatterns: [
+    '*.min.*',
+    '*.d.ts',
+    'CHANGELOG.md',
+    'dist',
+    'LICENSE*',
+    'output',
+    'out',
+    'coverage',
+    'public',
+    'temp',
+    'package-lock.json',
+    'pnpm-lock.yaml',
+    'yarn.lock',
+    // ignore for in lint-staged
+    '*.css',
+    '*.png',
+    '*.ico',
+    '*.txt',
+    // force include
+    '!.github',
+    '!.vitepress',
+    '!.vscode',
+    // force exclude
+    '.vitepress/cache',
+  ],
+
   overrides: [
     {
+      files: ['*.json', '*.jsonc'],
+      rules: {
+        "quotes": ['error', 'double'],
+        "quote-props": ['error', 'always']
+      }
+    },
+
+    {
       files: ['package.json'],
-      parser: 'jsonc-eslint-parser',
       rules: {
         'jsonc/sort-keys': [
           'error',
@@ -38,7 +72,6 @@ module.exports = {
               'type',
               'version',
               'description',
-              'keywords',
 
               'packageManager',
               'engines',
@@ -56,6 +89,7 @@ module.exports = {
               'homepage',
               'repository',
               'bugs',
+              'keywords',
 
               'scripts',
               'peerDependencies',
@@ -86,9 +120,17 @@ module.exports = {
         'no-console': 'off',
       },
     },
+
+    {
+      files: ['**/*.md/*.*'],
+      rules: {
+        'no-unused-expressions': 'off'
+      }
+    },
   ],
 
   rules: {
-
+    'import/no-named-as-default': 'off',
+    'import/no-named-as-default-member': 'off',
   }
 }
