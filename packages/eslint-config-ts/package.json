@@ -12,7 +12,7 @@
     "index.js"
   ],
   "scripts": {
-    "lint": "eslint -c index.js ../../../create-cool-app/template-library-ts"
+    "lint": "eslint -c index.js ."
   },
   "peerDependencies": {
     "eslint": ">=7.4.0",
