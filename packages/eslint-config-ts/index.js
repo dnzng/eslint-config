@@ -1,4 +1,8 @@
+const fs = require('node:fs')
+const process = require('node:process')
+const { join } = require('node:path')
 const basic = require('@dnzng/eslint-config-basic')
+const tsconfig = process.env.ESLINT_TSCONFIG || 'tsconfig.eslint.json'
 
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -16,7 +20,24 @@ module.exports = {
     },
   },
 
-  overrides: basic.overrides.concat(),
+  // the overrides key has a higher priority than the rules key.
+  overrides: basic.overrides.concat(
+    !fs.existsSync(join(process.cwd(), tsconfig))
+      ? []
+      : [{
+          parserOptions: {
+            tsconfigRootDir: process.cwd(),
+            project: [tsconfig],
+          },
+          parser: '@typescript-eslint/parser',
+          excludedFiles: ['**/*.md/*.*'],
+          files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+          // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
+          rules: {
+
+          }
+        }]
+  ),
 
   rules: {
     

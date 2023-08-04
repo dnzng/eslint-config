@@ -13,7 +13,7 @@ module.exports = {
   // - @dnzng/standard: eslint's default parser for ES
   // - plugin:import/recommended: eslint's default parser for ES
   // - plugin:jsonc/recommended-with-jsonc: jsonc-eslint-parser for json、jsonc...
-  // - plugin:yml/standard: yml-eslint-parser for yaml
+  // - plugin:yml/standard: yaml-eslint-parser for yaml
   // - plugin:markdown/recommended: use its own defined processor for markdown
   extends: [
     '@dnzng/standard',
@@ -50,9 +50,14 @@ module.exports = {
     '.vitepress/cache',
   ],
 
+  // as the overrides key has a higher priority than the rules key,
+  // you must specify the parser key to parse matched files not supported by ESlint. 
+  // otherwise ESLint will use the built-in Espree as parser to parse.
+  // as a result, the parsing will fail.
   overrides: [
     {
       files: ['*.json', '*.jsonc'],
+      parser: 'jsonc-eslint-parser',
       rules: {
         "quotes": ['error', 'double'],
         "quote-props": ['error', 'always']
@@ -61,6 +66,7 @@ module.exports = {
 
     {
       files: ['package.json'],
+      parser: 'jsonc-eslint-parser',
       rules: {
         'jsonc/sort-keys': [
           'error',
@@ -120,11 +126,21 @@ module.exports = {
         'no-console': 'off',
       },
     },
+    
+    {
+      files: ['*.yml', '*.yaml'],
+      parser: 'yaml-eslint-parser',
+      rules: {
+        'no-unused-expressions': 'off'
+      }
+    },
 
+    // the plugin processing the markdown file has a proecceer.
+    // so not specify the parser.
     {
       files: ['**/*.md/*.*'],
       rules: {
-        'no-unused-expressions': 'off'
+        'no-unused-expressions': 'off',
       }
     },
   ],
