@@ -1,6 +1,6 @@
 module.exports = {
   // does not include `browser; true` except the global window、document and navigator
-  // as this repo mainly aim at both ES and NodeJS.
+  // as this repo mainly aim to both ES and NodeJS.
   env: {
     es2021: true,
     node: true
