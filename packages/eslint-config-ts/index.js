@@ -1,6 +1,6 @@
-const fs = require('node:fs')
-const process = require('node:process')
-const { join } = require('node:path')
+const fs = require('fs')
+const process = require('process')
+const { join } = require('path')
 const basic = require('@dnzng/eslint-config-basic')
 const tsconfig = process.env.ESLINT_TSCONFIG || 'tsconfig.eslint.json'
 
