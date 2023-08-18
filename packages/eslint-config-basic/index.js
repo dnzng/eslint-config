@@ -149,8 +149,8 @@ module.exports = {
   rules: {
     'import/no-named-as-default': 'off',
     'import/no-named-as-default-member': 'off',
-    'import/namespace': 'off',
     'import/no-unresolved': 'off',
+    'import/namespace': 'off',
 
     'yml/quotes': ['error', { prefer: 'single', avoidEscape: false }],
     'yml/no-empty-document': 'off',
