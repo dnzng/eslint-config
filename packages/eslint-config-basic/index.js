@@ -141,6 +141,7 @@ module.exports = {
       files: ['**/*.md/*.*'],
       rules: {
         'no-unused-expressions': 'off',
+        'import/no-unresolved': 'off'
       }
     },
   ],
