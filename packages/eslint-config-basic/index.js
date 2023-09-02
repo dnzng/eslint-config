@@ -10,13 +10,13 @@ module.exports = {
   // you can find the track of the parsers in the exported file or
   // the dependencies property of package.json.
 
-  // - @dnzng/standard: eslint's default parser for ES
+  // - ./standard.js: eslint's default parser for ES
   // - plugin:import/recommended: eslint's default parser for ES
   // - plugin:jsonc/recommended-with-jsonc: jsonc-eslint-parser for json、jsonc...
   // - plugin:yml/standard: yaml-eslint-parser for yaml
   // - plugin:markdown/recommended: use its own defined processor for markdown
   extends: [
-    '@dnzng/standard',
+    './standard.js',
     'plugin:import/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
