@@ -18,7 +18,6 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
-    "@dnzng/eslint-config-standard": "workspace:*",
     "eslint-plugin-jsonc": "^2.9.0",
     "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-yml": "^1.8.0"
