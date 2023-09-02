@@ -3,7 +3,8 @@
   "version": "0.1.5",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "standard.js"
   ],
   "author": "Dylan Zhang",
   "license": "MIT",
