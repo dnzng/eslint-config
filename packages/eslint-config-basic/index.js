@@ -23,6 +23,10 @@ module.exports = {
     'plugin:markdown/recommended',
   ],
 
+  plugins: [
+    'html'
+  ],
+
   ignorePatterns: [
     '*.min.*',
     '*.d.ts',
