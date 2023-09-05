@@ -90,6 +90,8 @@ module.exports = {
               'main',
               'module',
               'types',
+              'unpkg',
+              'jsdelivr',
               'exports',
               'files',
               'publishConfig',
